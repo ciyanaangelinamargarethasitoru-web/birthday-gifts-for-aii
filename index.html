@@ -138,22 +138,8 @@ border-radius:25px;
 margin:20px auto;
 display:block;
 box-shadow:0 15px 30px rgba(0,0,0,.15);
-animation:photoShow .6s ease;
+animation:fade 1.5s;
 }
-
-@keyframes photoShow{
-
-from{
-opacity:0;
-transform:scale(0.85) translateY(20px);
-}
-
-to{
-opacity:1;
-transform:scale(1) translateY(0);
-}
-
-  }
 
 .caption{
 font-size:17px;
@@ -189,17 +175,6 @@ Open Your Gift 🤍
 </audio>
 
 <script>
-
-// Preload semua foto
-[
-"foto1.png",
-"foto2.jpg",
-"foto3.jpg",
-"foto4 .webp"
-].forEach(src => {
-    const img = new Image();
-    img.src = src;
-});
 
 for(let i=0;i<8;i++){
 
@@ -335,7 +310,7 @@ Semoga kamu selalu bahagia, selalu dilindungi Tuhan, dan jangan pernah merasa se
 </p>
 
 <p class="story">
-Ada aku, ada ibu Aii, ada ibu Arni, dan ada abang Aii yang selalu menyayangimu dan menanti kabar baikmu.
+Ada aku, ada ibu Aii, ada ibu Arni, dan ada abang Aii yang selalu menyayangimu.
 </p>
 
 <p class="story">
@@ -362,8 +337,7 @@ I LOVE YOU KAKAKK 🤍
 </p>
 
 <p class="story">
-Nanti, jika suatu saat kita sudah tidak bisa bersama lagi, jangan pernah lupain Cia yaa. 
-Cia juga tidak akan pernah melupakan Aii.
+Nanti, jika suatu saat kita sudah tidak bisa bersama lagi, jangan pernah lupain Cia yaa. Cia juga tidak akan pernah melupakan Aii.
 </p>
 
 <p class="story">
@@ -371,8 +345,7 @@ Di umurmu yang ke-19 tahun ini, semoga cara berpikirmu semakin luas, semakin dew
 </p>
 
 <p class="story">
-Jangan pernah lupa sama Tuhan. 
-Selalu rajin beribadah dan libatkan Tuhan dalam setiap langkahmu.
+Jangan pernah lupa sama Tuhan. Selalu rajin beribadah dan libatkan Tuhan dalam setiap langkahmu.
 </p>
 
 <button onclick="openLetter()">
@@ -395,37 +368,23 @@ Terima kasih sudah hadir dalam hidupku. 🤍
 </p>
 
 <p class="story">
-Aii, kalau ada hal dari masa kecil yang masih membuat kamu sedih, jangan terlalu menyalahkan diri sendiri ya. 
-Kamu sudah melewati banyak hal sampai bisa menjadi dirimu yang sekarang. 
-Pelan-pelan tinggalkan yang membuatmu sakit, dan terus berjalan menuju hal-hal baik yang menunggumu.🤍
+Semoga kamu selalu bahagia, selalu dilindungi Tuhan, dan ingat, jangan pernah merasa sendiri. Ada aku, ada Ibu Aii, ada Ibu Arni, dan ada Abang Aii yang selalu peduli dan menyayangimu.
 </p>
 
 <p class="story">
-Terus belajar menabung, jangan terlalu boros, tetapi jangan ragu juga untuk melakukan hal-hal yang membuatmu bahagia dan mengejar impianmu.
-Aku tahu mungkin perjalanan hidupmu tidak selalu mudah.
+Nanti jika suatu saat kita sudah tidak bisa bersama lagi, jangan pernah lupain Cia yaa. Cia juga tidak akan pernah melupakan Aii.
 </p>
 
 <p class="story">
-Ada masa kecil yang menyimpan luka, ada kenangan yang terkadang masih terasa menyakitkan. 
-Tetapi aku berharap, perlahan kamu bisa memaafkan masa lalu dan tidak lagi membiarkannya menentukan masa depanmu.
+Di umurmu yang ke-19 tahun ini, semoga pemikiranmu semakin luas, semakin dewasa, dan semakin bijaksana dalam menjalani hidup.
 </p>
 
 <p class="story">
-Masa lalu memang bagian dari hidupmu, tetapi bukan penentu siapa dirimu hari ini.
-
-Sekarang kamu sudah tumbuh menjadi seseorang yang kuat, baik hati, dan terus berusaha menjadi lebih baik setiap harinya.
+Jangan pernah lupa sama Tuhan. Selalu rajin beribadah dan libatkan Tuhan dalam setiap langkahmu.
 </p>
 
 <p class="story">
-Aku bangga melihat sejauh mana kamu sudah melangkah.
-
-I'm so proud of you my girlfriend who never gave up. 🤍
-
-Terima kasih karena sudah bertahan.
-
-Terima kasih karena masih memilih untuk bangkit setiap kali hidup terasa berat.
-
-Semoga ke depannya langkahmu selalu dipenuhi harapan baru, orang-orang baik, dan kebahagiaan yang selama ini mungkin belum sempat kamu rasakan.
+Sedikit apa pun rezeki yang kamu punya, jangan lupa berbagi kepada orang yang membutuhkan.
 </p>
 
 <p class="story">
@@ -433,30 +392,15 @@ Teruslah belajar menabung, jangan terlalu boros, tetapi jangan ragu juga untuk m
 </p>
 
 <p class="story">
-Aku percaya, masa depanmu akan jauh lebih indah daripada masa lalumu.
-
-Sekali lagi...
-Terima kasih sudah hadir dalam hidup Cia.
-
-Kehadiranmu membawa begitu banyak kenangan, tawa, pelajaran, dan kebahagiaan yang tidak akan pernah Cia lupakan.
-</p> 
-
-<p class="story">
-Selamat ulang tahun yang ke-19, sayang.🤍
-
-Semoga semua doa, harapan, dan impianmu
-
-satu per satu dapat terwujud.
-Semoga Tuhan selalu menyertaimu, memberikan kesehatan, umur yang panjang, hati yang damai, rezeki yang melimpah, dan kekuatan dalam setiap langkahmu.
-
-Amin..
-God bless you.❤️
+Sekali lagi, terima kasih sudah hadir dalam hidup Cia.
 </p>
 
 <p class="story">
+Selamat ulang tahun yang ke-19, sayang. Semoga semua yang kamu inginkan, semua doa, harapan, dan impianmu satu per satu dapat tercapai.
+</p>
 
-— Dari Cia, untuk Aii.💖
-
+<p class="story">
+Amin... God bless you ❤️
 </p>
 
 <button onclick="birthdayPage()">
@@ -475,17 +419,19 @@ document.querySelector(".container").innerHTML=`
 <h1>🎂 Happy Nineteen Birthday, Aii 🤍</h1>
 
 <p class="story">
-Every picture on this page tells a story, and every word comes from my heart.
+Selamat ulang tahun yang ke-19, sayang.
 </p>
 
 <p class="story">
 
-No matter where life takes us, you'll always have a special place in my heart.
+Semoga semua doa, harapan, dan impianmu satu per satu dapat terwujud.
 
 </p>
 
 <p class="story">
-Happy Nineteen Birthday, Aii. ❤️
+
+Semoga Tuhan selalu menyertaimu, memberikan kesehatan, umur yang panjang, kebahagiaan, rezeki yang melimpah, dan kekuatan dalam setiap langkahmu.
+
 </p>
 
 <p class="story">
@@ -519,12 +465,6 @@ document.querySelector(".container").innerHTML=`
 
 <h1>🤍 One Last Surprise...</h1>
 
-<img src="foto4.webp" class="memory">
-
-<p class="caption">
-A final memory that I will always keep in my heart. 🤍
-</p>
-
 <p class="story">
 
 Every picture on this page tells a story, and every word comes from my heart.
@@ -539,14 +479,14 @@ Thank you for being part of my life.
 
 <p class="story">
 
-sayang ini mungkin tidak seberapa yang telah kamu berikan dan kasih ke cia, tetapi yang bisa cia berikan hanya doa dan kasih sayang yang cia punya, dan terima kasih atas apa yang telah kamu berikan ke cia, cia akan selalu menyimpan dan mengenang pemberian dari kakak dan satu pesan cia "ingat lah sekecil apapun orang membantu dan memberi kakak, kakak harus selalu berterimakasih dan membalas kebaikannya"
-
-I LOVE YOU KAKAK 🤍
+No matter where life takes us, you'll always have a special place in my heart.
 
 </p>
 
 <p class="story">
-Happy Nineteen Birthday, Aii❤️
+
+Happy Nineteen Birthday, Aii ❤️
+
 </p>
 
 <p class="story">
@@ -554,6 +494,7 @@ Happy Nineteen Birthday, Aii❤️
 With Love 🤍
 
 <br><br>
+
 Cia
 
 </p>
