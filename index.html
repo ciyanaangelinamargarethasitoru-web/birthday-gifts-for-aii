@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Special Gift For Aii 🤍</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#FAF7F2;
+overflow:auto;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+min-height:100vh;
+padding:30px 0;
+color:#5B4A3F;
+}
+
+.container{
+width:90%;
+max-width:420px;
+text-align:center;
+animation:fade 2s;
+padding-bottom:40px;
+}
+
+h1{
+font-size:36px;
+margin-bottom:20px;
+font-weight:700;
+}
+
+p{
+font-size:17px;
+line-height:1.8;
+color:#8B7D73;
+margin-bottom:18px;
+}
+
+button{
+margin-top:20px;
+padding:16px 36px;
+border:none;
+border-radius:50px;
+background:#D6B98C;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.tulip{
+position:fixed;
+top:-50px;
+font-size:22px;
+animation:fall linear infinite;
+opacity:.6;
+pointer-events:none;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+
+.progress{
+width:280px;
+height:12px;
+background:#ece4d9;
+border-radius:30px;
+margin:30px auto;
+overflow:hidden;
+}
+
+#bar{
+width:0%;
+height:100%;
+background:#D6B98C;
+transition:.2s;
+}
+
+#percent{
+font-size:18px;
+color:#8B7D73;
+}
+
+.story{
+font-size:18px;
+line-height:1.8;
+color:#8A7D73;
+margin:20px;
+animation:fade 2s;
+}
+
+.memory{
+width:280px;
+max-width:100%;
+border-radius:25px;
+margin:20px auto;
+display:block;
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+animation:photoShow .6s ease;
+}
+
+@keyframes photoShow{
+
+from{
+opacity:0;
+transform:scale(0.85) translateY(20px);
+}
+
+to{
+opacity:1;
+transform:scale(1) translateY(0);
+}
+
+  }
+
+.caption{
+font-size:17px;
+color:#8B7D73;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Hi Aii 🤍</h1>
+
+<p>Before you continue...</p>
+
+<p>
+I made something special just for you.<br>
+Please wear your earphones.
+</p>
+
+<button onclick="startGift()">
+Open Your Gift 🤍
+</button>
+
+</div>
+
+<audio id="music" loop>
+      <source src="musik.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+// Preload semua foto
+[
+"foto1.png",
+"foto2.jpg",
+"foto3.jpg",
+"foto4.webp"
+].forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
+for(let i=0;i<8;i++){
+
+let t=document.createElement("div");
+
+t.className="tulip";
+
+t.innerHTML="🌷";
+
+t.style.left=Math.random()*100+"vw";
+
+t.style.animationDuration=(8+Math.random()*8)+"s";
+
+t.style.fontSize=(18+Math.random()*14)+"px";
+
+document.body.appendChild(t);
+
+}
+
+function startGift(){
+
+document.getElementById("music").play();
+
+document.querySelector(".container").innerHTML=`
+
+<h1 style="font-size:34px;">Loading Memories... 🤍</h1>
+
+<div class="progress">
+<div id="bar"></div>
+</div>
+
+<p id="percent">0%</p>
+
+`;
+
+let p=0;
+
+let timer=setInterval(function(){
+
+p++;
+
+document.getElementById("bar").style.width=p+"%";
+
+document.getElementById("percent").innerHTML=p+"%";
+
+if(p>=100){
+
+clearInterval(timer);
+
+showGallery();
+
+}
+
+},30);
+
+}
+
+function showGallery(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>Our First Memory 🤍</h1>
+
+<img src="foto1.png" class="memory">
+
+<p class="caption">
+Every journey begins with one beautiful moment.
+</p>
+
+<button onclick="nextMemory()">
+Next →
+</button>
+
+`;
+
+}
+
+
+function nextMemory(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>Another Beautiful Memory 🤍</h1>
+
+<img src="foto2.jpg" class="memory">
+
+<p class="caption">
+Another page, another memory to keep forever.
+</p>
+
+<button onclick="nextMemoryPhoto3()">
+Next →
+</button>
+
+`;
+
+}
+
+
+function nextMemoryPhoto3(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>One More Beautiful Memory 🤍</h1>
+
+<img src="foto3.jpg" class="memory">
+
+<p class="caption">
+Another memory I'll always cherish.
+</p>
+
+<button onclick="nextMemory2()">
+Continue →
+</button>
+
+`;
+
+}
+
+
+function nextMemory2(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>Our Story 🤍</h1>
+
+<p class="story">
+Terimakasih sudah hadir dalam hidupku. 🤍
+</p>
+
+<p class="story">
+Semoga kamu selalu bahagia, selalu dilindungi Tuhan, dan jangan pernah merasa sendiri.
+</p>
+
+<p class="story">
+Ada aku, ada ibu Aii, ada ibu Arni, dan ada abang Aii yang selalu menyayangimu dan menanti kabar baikmu.
+</p>
+
+<p class="story">
+Apapun yang terjadi nanti, jangan pernah lupa bahwa kamu adalah seseorang yang sangat berarti.
+</p>
+
+<button onclick="nextMemory3()">
+Continue →
+</button>
+
+`;
+
+}
+
+
+function nextMemory3(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>💌 Surat Untuk Aii 🤍</h1>
+
+<p class="story">
+I LOVE YOU KAKAKK 🤍
+</p>
+
+<p class="story">
+Nanti, jika suatu saat kita sudah tidak bisa bersama lagi, jangan pernah lupain Cia yaa. 
+Cia juga tidak akan pernah melupakan Aii.
+</p>
+
+<p class="story">
+Di umurmu yang ke-19 tahun ini, semoga cara berpikirmu semakin luas, semakin dewasa, dan semakin bijaksana dalam menjalani hidup.
+</p>
+
+<p class="story">
+Jangan pernah lupa sama Tuhan. 
+Selalu rajin beribadah dan libatkan Tuhan dalam setiap langkahmu.
+</p>
+
+<button onclick="openLetter()">
+Baca Surat 🤍
+</button>
+
+`;
+
+}
+
+
+function openLetter(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>Untuk Aii ❤️</h1>
+
+<p class="story">
+Terima kasih sudah hadir dalam hidupku. 🤍
+</p>
+
+<p class="story">
+Aii, kalau ada hal dari masa kecil yang masih membuat kamu sedih, jangan terlalu menyalahkan diri sendiri ya. 
+Kamu sudah melewati banyak hal sampai bisa menjadi dirimu yang sekarang. 
+Pelan-pelan tinggalkan yang membuatmu sakit, dan terus berjalan menuju hal-hal baik yang menunggumu.🤍
+</p>
+
+<p class="story">
+Terus belajar menabung, jangan terlalu boros, tetapi jangan ragu juga untuk melakukan hal-hal yang membuatmu bahagia dan mengejar impianmu.
+Aku tahu mungkin perjalanan hidupmu tidak selalu mudah.
+</p>
+
+<p class="story">
+Ada masa kecil yang menyimpan luka, ada kenangan yang terkadang masih terasa menyakitkan. 
+Tetapi aku berharap, perlahan kamu bisa memaafkan masa lalu dan tidak lagi membiarkannya menentukan masa depanmu.
+</p>
+
+<p class="story">
+Masa lalu memang bagian dari hidupmu, tetapi bukan penentu siapa dirimu hari ini.
+
+Sekarang kamu sudah tumbuh menjadi seseorang yang kuat, baik hati, dan terus berusaha menjadi lebih baik setiap harinya.
+</p>
+
+<p class="story">
+Aku bangga melihat sejauh mana kamu sudah melangkah.
+
+I'm so proud of you my girlfriend who never gave up. 🤍
+
+Terima kasih karena sudah bertahan.
+
+Terima kasih karena masih memilih untuk bangkit setiap kali hidup terasa berat.
+
+Semoga ke depannya langkahmu selalu dipenuhi harapan baru, orang-orang baik, dan kebahagiaan yang selama ini mungkin belum sempat kamu rasakan.
+</p>
+
+<p class="story">
+Teruslah belajar menabung, jangan terlalu boros, tetapi jangan ragu juga untuk melakukan hal-hal yang kamu inginkan dan mengejar impianmu.
+</p>
+
+<p class="story">
+Aku percaya, masa depanmu akan jauh lebih indah daripada masa lalumu.
+
+Sekali lagi...
+Terima kasih sudah hadir dalam hidup Cia.
+
+Kehadiranmu membawa begitu banyak kenangan, tawa, pelajaran, dan kebahagiaan yang tidak akan pernah Cia lupakan.
+</p> 
+
+<p class="story">
+Selamat ulang tahun yang ke-19, sayang.🤍
+
+Semoga semua doa, harapan, dan impianmu
+
+satu per satu dapat terwujud.
+Semoga Tuhan selalu menyertaimu, memberikan kesehatan, umur yang panjang, hati yang damai, rezeki yang melimpah, dan kekuatan dalam setiap langkahmu.
+
+Amin..
+God bless you.❤️
+</p>
+
+<p class="story">
+
+— Dari Cia, untuk Aii.💖
+
+</p>
+
+<button onclick="birthdayPage()">
+Lanjut 🎂
+</button>
+
+`;
+
+}
+
+
+function birthdayPage(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>🎂 Happy Nineteen Birthday, Aii 🤍</h1>
+
+<p class="story">
+Every picture on this page tells a story, and every word comes from my heart.
+</p>
+
+<p class="story">
+
+No matter where life takes us, you'll always have a special place in my heart.
+
+</p>
+
+<p class="story">
+Happy Nineteen Birthday, Aii. ❤️
+</p>
+
+<p class="story">
+
+Aku bangga melihat sejauh mana kamu sudah melangkah.
+
+</p>
+
+<p class="story">
+
+With Love 🤍
+<br><br>
+Cia
+
+</p>
+
+<button onclick="lastPage()">
+
+Next 🤍
+
+</button>
+
+`;
+
+}
+
+
+function lastPage(){
+
+document.querySelector(".container").innerHTML=`
+
+<h1>🤍 One Last Surprise...</h1>
+
+<img src="foto4.webp" class="memory">
+
+<p class="caption">
+A final memory that I will always keep in my heart. 🤍
+</p>
+
+<p class="story">
+
+Every picture on this page tells a story, and every word comes from my heart.
+
+</p>
+
+<p class="story">
+
+Thank you for being part of my life.
+
+</p>
+
+<p class="story">
+
+sayang ini mungkin tidak seberapa yang telah kamu berikan dan kasih ke cia, tetapi yang bisa cia berikan hanya doa dan kasih sayang yang cia punya, dan terima kasih atas apa yang telah kamu berikan ke cia, cia akan selalu menyimpan dan mengenang pemberian dari kakak dan satu pesan cia "ingat lah sekecil apapun orang membantu dan memberi kakak, kakak harus selalu berterimakasih dan membalas kebaikannya"
+
+I LOVE YOU KAKAK 🤍
+
+</p>
+
+<p class="story">
+Happy Nineteen Birthday, Aii❤️
+</p>
+
+<p class="story">
+
+With Love 🤍
+
+<br><br>
+Cia
+
+</p>
+
+<button onclick="location.reload()">
+
+Open Again 🤍
+
+</button>
+
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>
